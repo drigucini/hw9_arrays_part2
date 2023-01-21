@@ -7,10 +7,6 @@ public class Main {
         task2();
         task3();
         task4();
-        task5();
-        task6();
-        task7();
-        task8();
     }
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -76,36 +72,49 @@ public class Main {
 
     public static void task1 () {
         System.out.println("\nTask 1");
-        int[] sums = new int [30];
-
-
+        int[] sums = generateRandomArray();
+        System.out.println(Arrays.toString(sums));
+        int overall = 0;
+        for (int sum : sums) {
+            overall += sum;
+        }
+        System.out.println("\nOverall monthly expenditures were " + overall);
     }
 
     public static void task2 () {
         System.out.println("\nTask 2");
+        int[] sums = generateRandomArray();
+        System.out.println(Arrays.toString(sums));
+        int min = 200_001;
+        int max = 0;
+        for (int i : sums) {
+            if (max < i) {
+                max = i;
+            }
+            if (min > i) {
+                min = i;
+            }
+        }
+        System.out.println("\nMin expenditure per day was " + min + ". Max expenditure per day was " + max);
     }
 
     public static void task3 () {
         System.out.println("\nTask 3");
+        int[] sums = generateRandomArray();
+        System.out.println(Arrays.toString(sums));
+        double overall = 0;
+        for (double sum : sums) {
+            overall += sum;
+        }
+        double average = overall / sums.length;
+        System.out.println("\nAverage monthly expenditures were " + average);
     }
 
     public static void task4 () {
         System.out.println("\nTask 4");
-    }
-
-    public static void task5 () {
-        System.out.println("\nTask 5");
-    }
-
-    public static void task6 () {
-        System.out.println("\nTask 6");
-    }
-
-    public static void task7 () {
-        System.out.println("\nTask 7");
-    }
-
-    public static void task8 () {
-        System.out.println("\nTask 8");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length-1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
     }
 }
